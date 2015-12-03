@@ -1,0 +1,44 @@
+<h1>Average ratings:</h1>
+<p>Clarity:
+  <%= @teacher.ratings.average(:clarity) %>
+</p>
+<p>Easiness:
+  <%= @teacher.ratings.average(:easiness) %>
+</p>
+<p>Helpfulness:
+  <%= @teacher.ratings.average(:helpfulness) %>
+</p>
+<h2>All the ratings:</h2>
+
+<div>
+  <%= @teacher.ratings.each do |rating| %>
+
+    <p>Clarity:
+      <%= rating.clarity %>
+    </p>
+
+    <p>Helpfulness:
+      <%= rating.helpfulness %>
+    </p>
+
+    <p>Easiness:
+      <%= rating.easiness %>
+    </p>
+
+    <p>Comment:
+      <%= rating.comment %>
+    </p>
+
+    <%= link_to "Delete rating", [rating.teacher, rating], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+
+    <hr>
+  <% end %>
+</div>
+
+<p>
+  <%= link_to "Rate teacher", new_teacher_rating_path(@teacher), class: "btn btn-primary" %>
+</p>
+
+<p>
+  <%= link_to "Back to school", school_path(@school), class: "btn btn-primary" %>
+</p>

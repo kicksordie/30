@@ -1,0 +1,27 @@
+<h1>Teacher Rating</h1>
+<%= form_for([@teacher, @rating]) do |f| %>
+  <p>
+    <%= f.label :clarity %>
+    <%= f.text_field :clarity %>
+  </p>
+
+  <p>
+    <%= f.label :easiness %>
+    <%= f.text_field :easiness %>
+  </p>
+
+  <p>
+    <%= f.label :helpfulness %>
+    <%= f.text_field :helpfulness %>
+  </p>
+
+  <p>
+    <%= f.label :comment %>
+    <br>
+    <%= f.text_area :comment %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,28 @@
+<%= form_for :school, url: schools_path do |f| %>
+
+  <!-- tell the user that something went wrong -->
+  <% if @school.errors.any? %>
+    <div class="" id="error_explaination">
+      <h2>
+        <%= pluralize(@school.errors.count, "error") %> prohibited this school from being saved:
+      </h2>
+      <ul>
+        <% @school.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

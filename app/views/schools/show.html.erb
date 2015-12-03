@@ -1,0 +1,25 @@
+<h1>School Information</h1>
+<p>
+  <%= @school.name %>
+</p>
+
+<h2>List of Teachers</h2>
+
+<%= @school.teachers.each do |teacher| %>
+  <%= teacher.to_s %>
+  <%= link_to "Info", school_teacher_path(@school, teacher), class: "btn btn-info" %>
+  <%= link_to 'Destroy', school_teacher_path(@school, teacher),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+  |
+  <%= link_to "Edit", edit_school_teacher_path(@school, teacher), class: "btn btn-primary" %>
+  <br>
+<% end %>
+
+<p>
+  <%= link_to "Create new teacher", new_school_teacher_path(@school), class: "btn btn-primary" %>
+</p>
+
+<p>
+  <%= link_to "Back to School List", schools_path, class: "btn btn-primary" %>
+</p>

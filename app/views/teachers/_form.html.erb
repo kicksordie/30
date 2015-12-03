@@ -1,0 +1,20 @@
+<%= form_for([@school, @teacher]) do |f| %>
+  <p>
+    <%= f.label :firstName %><br>
+    <%= f.text_field :firstName %>
+  </p>
+
+  <p>
+    <%= f.label :lastName %><br>
+    <%= f.text_field :lastName %>
+  </p>
+
+  <p>
+    <%= f.label :middleName %><br>
+    <%= f.text_field :middleName %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
