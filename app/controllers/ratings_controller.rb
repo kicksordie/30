@@ -3,12 +3,12 @@ class RatingsController < ApplicationController
   before_action :get_teacher
 
   def new
-    #get_teacher
+    get_teacher
     @rating = current_user.ratings.build
   end
 
   def create
-    #get_teacher
+    get_teacher
     @rating = current_user.ratings.create(rating_params)
     if @rating.save
       redirect_to school_teacher_path(@teacher.school, @teacher)

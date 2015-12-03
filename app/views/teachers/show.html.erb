@@ -1,3 +1,4 @@
+<!-- Caculate the average rating of the teacher -->
 <h1>Average ratings:</h1>
 <p>Clarity:
   <%= @teacher.ratings.average(:clarity) %>
@@ -8,8 +9,10 @@
 <p>Helpfulness:
   <%= @teacher.ratings.average(:helpfulness) %>
 </p>
-<h2>All the ratings:</h2>
+<hr>
 
+<!-- Show all the ratings -->
+<h2>All the ratings:</h2>
 <div>
   <%= @teacher.ratings.each do |rating| %>
 
